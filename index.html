@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="dropzone.js"></script>
+</head>
+
+<body>
+  <h1>Mingin' or Blingin'</h1>
+  <form action="/file-upload"
+      class="dropzone"
+      id="my-awesome-dropzone"></form>
+
+      <script>
+      Dropzone.options.myAwesomeDropzone = {
+      paramName: "file", // The name that will be used to transfer the file
+      maxFilesize: 2, // MB
+      accept: function(file, done) {
+        var toss = Math.floor(Math.random() * 2) + 1  
+        if (toss == 1) {
+          done("Mingin'");
+        }
+        if (toss == 2){
+         done("Blingin'");
+         }
+      }
+    };
+      </script>
+
+</body>
+
+</html>
